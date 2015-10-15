@@ -4,7 +4,7 @@ This Unity project will be used to visualise all events during the EHackB event.
 
 # Working version
 
--Ambient visuals
+Ambient visuals
 	- particle system
 	- wind and gravity to influence particle movement
 	- scrolling background
