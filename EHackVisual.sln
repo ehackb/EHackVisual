@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{08E540EE-2500-119F-7068-6FA685A73E8E}") = "EHackVisual", "Assembly-CSharp.csproj", "{5D637593-BE75-2CEF-BA96-1DD726E42927}"
 EndProject
+Project("{08E540EE-2500-119F-7068-6FA685A73E8E}") = "EHackVisual", "Assembly-CSharp-Editor.csproj", "{73D591F5-C8FE-122E-A905-D35E7B76B1FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{5D637593-BE75-2CEF-BA96-1DD726E42927}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D637593-BE75-2CEF-BA96-1DD726E42927}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D637593-BE75-2CEF-BA96-1DD726E42927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D591F5-C8FE-122E-A905-D35E7B76B1FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D591F5-C8FE-122E-A905-D35E7B76B1FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D591F5-C8FE-122E-A905-D35E7B76B1FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D591F5-C8FE-122E-A905-D35E7B76B1FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-									GlobalSection(MonoDevelopProperties) = preSolution
+																																									GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
