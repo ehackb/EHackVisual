@@ -2,9 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/update_note.cs">
     <Files>
-      <File FileName="Assets/scripts/update_note.cs" Line="32" Column="33" />
-      <File FileName="Assets/scripts/GeneratePrefabs.cs" Line="1" Column="1" />
-      <File FileName="Assets/SocketIO/Scripts/SocketIO/SocketIOComponent.cs" Line="346" Column="46" />
+      <File FileName="Assets/scripts/update_note.cs" Line="11" Column="30" />
+      <File FileName="Assets/scripts/GeneratePrefabs.cs" Line="21" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -127,6 +127,7 @@
      <Compile Include="Assets\SocketIO\WebsocketSharp\WebSocketStream.cs" />
      <Compile Include="Assets\scripts\DestroyByBoundaries.cs" />
      <Compile Include="Assets\scripts\GeneratePrefabs.cs" />
+     <Compile Include="Assets\scripts\NoteMover.cs" />
      <Compile Include="Assets\scripts\OffsetScroller.cs" />
      <Compile Include="Assets\scripts\update_note.cs" />
      <None Include="Assets\SocketIO\JSONObject\readme.txt" />

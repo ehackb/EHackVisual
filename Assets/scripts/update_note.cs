@@ -4,33 +4,53 @@ using SocketIO;
 
 public class update_note : MonoBehaviour {
 
-	public float timeoutDestructor;
-
-	private Rigidbody body;
 	private SocketIOComponent socket;
+	private float pan;
+	private float pitch;
+	private float nextActionTime = 0.0f;
+	private float period = 0.3f;
 
-	void Start () {
-		timeoutDestructor = 200;
+	void Start () 
+	{
+		onlyOnce = false;
 
 		GameObject go = GameObject.Find("SocketIO");
 		socket = go.GetComponent<SocketIOComponent>();
 
-		body = GetComponent<Rigidbody>();
+		pan = transform.position.x;
+		pitch = transform.position.y;
+
+		updatePosition("created");
 	}
 
-	void FixedUpdate () {
-		float x = transform.position.x + Random.Range(0.01f ,0.05f);
-		float y = transform.position.y + Random.Range(-0.02f ,0.02f);
-		float z = transform.position.z;
+	//
+	void FixedUpdate () 
+	{
 
-		Vector3 moveTo = new Vector3 (x, y, z);
+		if (Time.time > nextActionTime ) 
+		{ 
+			nextActionTime = Time.time + period; 
+			updatePosition("moving");
+		} 
+	
+	}
 
-		body.MovePosition(moveTo);
+	void OnTriggerExit(Collider other)
+	{
+		updatePosition("gone");
+	}
 
+	private void updatePosition(string what)
+	{
+		pan = Mathf.RoundToInt((transform.position.x + 6.5f) * 9.14f);
+		pitch = Mathf.RoundToInt((transform.position.y + 4) * 14.2f);
+		
 		JSONObject jsonObj = new JSONObject();
-		jsonObj.AddField ("scale", x);
-		jsonObj.AddField ("pitch", y);
+		jsonObj.AddField ("pan", pan);
+		jsonObj.AddField ("pitch", pitch);
 		jsonObj.AddField ("name", this.name);
+		jsonObj.AddField ("lifecycle", what);
+		
 		socket.Emit ("note_move", jsonObj);
 	}
 }
