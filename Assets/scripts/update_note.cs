@@ -12,8 +12,6 @@ public class update_note : MonoBehaviour {
 
 	void Start () 
 	{
-		onlyOnce = false;
-
 		GameObject go = GameObject.Find("SocketIO");
 		socket = go.GetComponent<SocketIOComponent>();
 
@@ -22,17 +20,14 @@ public class update_note : MonoBehaviour {
 
 		updatePosition("created");
 	}
-
-	//
+	
 	void FixedUpdate () 
 	{
-
 		if (Time.time > nextActionTime ) 
 		{ 
 			nextActionTime = Time.time + period; 
 			updatePosition("moving");
 		} 
-	
 	}
 
 	void OnTriggerExit(Collider other)
@@ -52,5 +47,7 @@ public class update_note : MonoBehaviour {
 		jsonObj.AddField ("lifecycle", what);
 		
 		socket.Emit ("note_move", jsonObj);
+
+		Debug.Log (string.Format ("{0}[pan: {1}, pitch: {2}, {3}]",this.name , pan, pitch, what));
 	}
 }

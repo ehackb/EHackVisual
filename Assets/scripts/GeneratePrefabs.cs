@@ -5,8 +5,12 @@ using SocketIO;
 public class GeneratePrefabs : MonoBehaviour {
 
 	public Transform first_note;
-
+	public Transform second_note;
+	public Transform third_note;
+	
 	private SocketIOComponent socket;
+	private float nextActionTime = 0.0f;
+	private float period = 4f;
 
 	void Start () {
 		GameObject go = GameObject.Find("SocketIO");
@@ -15,19 +19,26 @@ public class GeneratePrefabs : MonoBehaviour {
 		socket.On("message", TestMessage);
 	}
 
-	void Update () {
-
-	}
-
 	public void TestMessage(SocketIOEvent e)
 	{
-		Debug.Log(string.Format("[name: {0}, data: {1}]", e.name, e.data));
+		Debug.Log (string.Format ("[name: {0}, data: {1}]", e.name, e.data));
 
-		float x = Random.Range (-4f, 2f);
-		float y = Random.Range (-3f, 3f);
-
-		Instantiate(first_note, new Vector3(x, y, 0), Quaternion.identity);
+		switch(e.data.GetField("message").str)
+		{
+			case "first": generate(first_note); break;
+			case "second": generate(second_note);break;
+			case "third": generate(third_note);break;
+		}
 	}
 
-
+	public void generate(Transform which)
+	{
+		if (Time.time > nextActionTime) { 
+			float x = Random.Range (-4f, 2f);
+			float y = Random.Range (-3f, 3f);
+			
+			Instantiate (which, new Vector3 (x, y, 0), Quaternion.identity);
+			nextActionTime = Time.time + period;
+		}
+	}
 }
