@@ -12,7 +12,8 @@ public class GeneratePrefabs : MonoBehaviour {
 	private float nextActionTime = 0.0f;
 	private float period = 4f;
 
-	void Start () {
+	void Start () 
+	{
 		GameObject go = GameObject.Find("SocketIO");
 		socket = go.GetComponent<SocketIOComponent>();
 
@@ -33,7 +34,8 @@ public class GeneratePrefabs : MonoBehaviour {
 
 	public void generate(Transform which)
 	{
-		if (Time.time > nextActionTime) { 
+		if (Time.time > nextActionTime) 
+		{ 
 			float x = Random.Range (-4f, 2f);
 			float y = Random.Range (-3f, 3f);
 			
