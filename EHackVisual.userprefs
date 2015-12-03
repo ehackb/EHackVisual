@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/GeneratePrefabs.cs">
     <Files>
-      <File FileName="Assets/scripts/update_note.cs" Line="43" Column="37" />
+      <File FileName="Assets/scripts/update_note.cs" Line="1" Column="1" />
       <File FileName="Assets/scripts/NoteMover.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/GeneratePrefabs.cs" Line="30" Column="21" />
+      <File FileName="Assets/scripts/GeneratePrefabs.cs" Line="20" Column="17" />
       <File FileName="Assets/scripts/DestroyByBoundaries.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
